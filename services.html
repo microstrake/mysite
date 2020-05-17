@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+
+  <style>
+    @import url("https://fonts.googleapis.com/css?family=Acme|Lobster|Patua+One|Rubik|Sniglet");
+    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    @font-face {
+      font-family: teen;
+      src: url("../fonts/teen.ttf");
+    }
+
+    header,
+    section {
+      overflow-x: hidden;
+    }
+
+    :root {
+      --Sniglet-font: "Sniglet", cursive;
+      --Rubik: "Rubik", cursive;
+      --Patua: "Patua One", cursive;
+      --Lobster: "lobster", cursive;
+      --light-black: #2e2c2caf;
+      --bggradient: linear-gradient(to bottom, #dd2476, #ff512f);
+      --light-gray: rgba(255, 255, 255, 0.877);
+    }
+
+    header a {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.9em;
+      color: rgb(0, 0, 0);
+    }
+
+    .navbar-toggler {
+      background: linear-gradient(to bottom, #dd2476, #ff512f);
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    header .nav-item:last-child {
+      padding-right: 10.5em;
+    }
+
+    header .nav-item {
+      padding: 0.9em;
+    }
+
+    header .navbar-brand {
+      padding-left: 4rem;
+      height: 50px;
+      display: flex;
+      align-items: center;
+
+    }
+
+    header .navbar-brand img {
+      height: 200px;
+      width: auto;
+      position: absolute;
+      overflow: hidden;
+    }
+
+    header .nav-link:hover {
+      color: rgb(241, 14, 14);
+    }
+
+    /* landing page design starts from here */
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #f1f1f1;
+    }
+
+    .about-section {
+      background: linear-gradient(to bottom, #dd2476, #ff512f) no-repeat left;
+      background-size: 55%;
+      background-color: #fdfdfd;
+      overflow: hidden;
+      padding: 50px 0;
+
+    }
+
+    .inner-container {
+      width: 55%;
+      float: right;
+      background-color: #fdfdfd;
+      padding: 100px;
+    }
+
+    .inner-container h1 {
+      margin-bottom: 30px;
+      font-size: 30px;
+      font-weight: 900;
+    }
+
+    .text {
+      font-size: 13px;
+      color: #545454;
+      line-height: 30px;
+      text-align: justify;
+      margin-bottom: 40px;
+    }
+
+    .skills {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    @media screen and (max-width: 1200px) {
+      .inner-container {
+        padding: 80px;
+      }
+
+    }
+
+    @media screen and (max-width: 1000px) {
+      .about-section {
+        background-size: 100%;
+        padding: 100px 40px;
+      }
+
+      .inner-container {
+        width: 100%;
+      }
+
+    }
+
+    @media screen and (max-width: 600px) {
+      .about-section {
+        padding: 0;
+      }
+
+      .inner-container {
+        padding: 60px;
+      }
+
+    }
+
+
+    /* landing page design ends from here */
+
+
+
+    /* service section starts from here */
+    .services {
+      background: #f1f1f1;
+      text-align: center;
+
+    }
+
+    .services h1 {
+      display: inline-block;
+      text-transform: uppercase;
+      border-bottom: 4px solid #3498db;
+      font-size: 30px;
+      padding: 10px;
+      margin-top: 40px;
+
+
+    }
+
+    .cen {
+      max-width: 1200;
+      margin: auto;
+      overflow: hidden;
+      padding: 20px;
+    }
+
+    .service {
+      display: inline-block;
+      width: calc(100% / 3);
+      margin: 0 -2px;
+      padding: 20px;
+      box-sizing: border-box;
+      cursor: pointer;
+      transition: 0.4s;
+
+    }
+
+    .service:hover {
+      background: #ddd;
+
+    }
+
+    .service i {
+      color: #3498db;
+      font-size: 34px;
+      margin-bottom: 30px;
+    }
+
+    .services img {
+      height: 80px;
+      width: 80px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .service h2 {
+      font-size: 18px;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin: 0;
+    }
+
+    .service p {
+      color: gray;
+      font-size: 15px;
+      font-weight: 500;
+
+    }
+
+    @media screen and (max-width: 800px) {
+      .service {
+        width: 50%;
+
+      }
+
+    }
+
+    @media screen and (max-width: 500px) {
+      .service {
+        width: 100%;
+
+      }
+
+    }
+
+    /* fotter css starts from here */
+
+    footer {
+      position: relative;
+      bottom: 0px;
+      width: 100%;
+      margin-top: 30px;
+      background: #111;
+      color: #d9d9d9;
+    }
+
+    .main-content {
+      display: flex;
+    }
+
+    .main-content .boxx {
+      flex-basis: 50%;
+      padding: 10px 20px;
+    }
+
+    .boxx h2 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .boxx .content {
+      margin: 20px 0 0 0;
+      position: relative;
+
+    }
+
+    .boxx .content::before {
+      position: absolute;
+      top: -10px;
+      content: '';
+      height: 2px;
+      width: 100%;
+      background: #1a1a1a;
+
+    }
+
+    .boxx .content::after {
+      position: absolute;
+      content: '';
+      height: 2px;
+      width: 15%;
+      background: #f12020;
+      top: -10px;
+    }
+
+    .left .boxx p {
+      text-align: justify;
+    }
+
+    .right .content .social {
+      margin: 20px 0 0 0;
+
+    }
+
+    .right .content .social a {
+      padding: o 2px;
+    }
+
+    .right .content .social a span {
+      height: 40px;
+      width: 40px;
+      background: #1a1a1a;
+      line-height: 40px;
+      text-align: center;
+      font-size: 18px;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    .right .content .social a span:hover {
+      background: #f12020;
+
+    }
+
+    .center .content .fas {
+      font-size: 1.4375rem;
+      background: #1a1a1a;
+      height: 40px;
+      width: 40px;
+      line-height: 40px;
+      text-align: center;
+      transition: 0.3s;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    .center .content .fas:hover {
+      background: #f12020;
+    }
+
+    .center .content .text {
+      font-size: 1.0625rem;
+      font-weight: 500;
+      padding-left: 10px;
+
+    }
+
+    .center .content .phone {
+      margin: 15px 0;
+
+    }
+
+    .right form .text {
+      font-size: 1.0625rem;
+      margin-bottom: 2px;
+      color: #656565;
+    }
+
+    .right form .msg {
+      margin-top: 10px;
+    }
+
+    .right form input,
+    .right form textarea {
+      width: 100%;
+      font-size: 1.0625rem;
+      background: #151515;
+      padding-left: 10px;
+      color: white;
+      border: 1px solid #222222;
+
+    }
+
+    .right form input:focus,
+    .right form textarea:focus {
+      outline-color: #3498db;
+
+    }
+
+    .right form input {
+      height: 35px;
+
+    }
+
+    .right form .btn-send {
+      margin-top: 10px;
+
+    }
+
+    .head-text {
+      margin: 200px;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+
+    .head-text h1 {
+      font-size: 4.5rem;
+    }
+
+    .right form .btn-send button {
+      height: 40px;
+      width: 100%;
+      color: white;
+      border: none;
+      outline: none;
+      background-color: #f12020;
+      font-size: 1.0625rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: .3s;
+
+    }
+
+    .right form .btn-send button:hover {
+      background: #000;
+    }
+
+    .bottom center {
+      pad: 5px;
+      font-size: 0.9375rem;
+      background: #151515;
+    }
+
+    .bottom center {
+      color: #656565;
+
+    }
+
+    .lg-d {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    #wd {
+      color: green !important;
+    }
+
+    #dm {
+      color: rgb(75, 75, 216) !important;
+    }
+
+    #bt {
+      color: rgb(216, 120, 75) !important;
+    }
+
+    @media screen and (max-width: 900px) {
+      footer {
+        position: relative;
+        bottom: 0px;
+      }
+
+      .main-content {
+        flex-wrap: wrap;
+        flex-direction: column;
+      }
+
+      .main-content .boxx {
+        margin: 5px 0;
+      }
+
+    }
+
+    @media screen and (max-width: 360px) {
+      header .navbar-brand img {
+        height: 87px;
+      }
+
+      header .navbar-brand {
+        padding-left: 1rem;
+      }
+
+    }
+
+    @media screen and (max-width: 375px) {
+      header .navbar-brand img {
+        height: 260px;
+      }
+
+    }
+
+    @media screen and (max-width: 411px) {
+      header .navbar-brand img {
+        height: 87px;
+      }
+
+      header .navbar-brand {
+        padding-left: 1rem;
+      }
+
+    }
+
+    @media screen and (max-width: 414px) {
+      header .navbar-brand img {
+        height: 87px;
+      }
+
+      header .navbar-brand {
+        padding-left: 1rem;
+      }
+
+    }
+
+    @media screen and (max-width: 768px) {
+      .navbar {
+        padding: 1.5rem 1rem;
+      }
+
+      header .navbar-brand {
+        padding-left: 1rem;
+      }
+
+    }
+
+    @media screen and (min-width: 827px) {
+      .head-text h1 {
+        font-size: 3.5rem;
+      }
+    }
+
+
+
+    /* -----------------UTILITES----------- */
+    .f-h-size {
+      font-size: 3.5rem !important;
+
+    }
+
+    .txt-white {
+      color: white;
+      font-size: 15px !important;
+
+    }
+
+
+    /* fotter css end from here */
+
+    /* floating button for scroll */
+    #myBtn {
+      display: none;
+      position: fixed;
+      bottom: 25px;
+      right: 40px;
+      z-index: 99;
+      border: none;
+      color: white;
+      background: #ff512f;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    #myBtn:hover {
+      background: #606060;
+
+    }
+    .p-top{
+      padding-top: 25px;
+    }
+
+    /* floating button for scroll */
+  </style>
+
+</head>
+
+<body>
+  <header>
+    <div class="container-fluid p-0">
+      <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="Index.html">
+          <img src="../assets/logo.png">
+          <i class="fas  fa-2x mx-3"></i></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-align-right text-light"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="mr-auto"></div>
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="Index.html">HOME
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">ABOUT</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <div class="dropdown">
+                <a href="#service" class="nav-link">SERVICES</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://microstrake.blogspot.com/" target="_blank">BLOG</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">CONTACT</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- landing page design starts from here -->
+    <div class="about-section">
+      <div class="inner-container">
+        <h1>OUR ALL SERVICES</h1>
+        <p class="text">
+          We understand your problems and would like to solve them with you.
+          Solutions for you is our ultimate goal. We provide a wide range of solutions from website development to
+          Digital marketing, from brand tie-ups to transit media advertising. We would be happy to tell about them to
+          you in brief.
+        </p>
+        <div class="skills">
+          <span><i>~Your Vision Our Mission~</i></span>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+    <!-- landing page design end from here -->
+  </header>
+
+
+  <!-- Services section starts from here -->
+  <main>
+    <div class="services">
+      <h1>WEBSITE DESIGNING</h1>
+      <div class="cen">
+        <div class="service">
+          <img src="../img/icons/corporate.jpg" alt="corporate">
+          <h2>Corporate Profile</h2>
+          <p>Corporate profile brings your story in front of the world. It builds and promotes your brand in an unique
+            way.</p>
+        </div>
+
+        <div class="service">
+          <img src="../img/icons/reralestate.jpg" alt="reralestate">
+          <h2>Real Estate Profile</h2>
+          <p>Every Real Estate dealer needs a platform to build awareness, generate quality leads and increase
+            credibility. This is done best with the help of a Real estate profile.</p>
+        </div>
+
+        <div class="service">
+          <img src="../img/icons/food.jpg" alt="FOOD & BEVERAGE PROFILE">
+          <h2>Food & Beverage Profile</h2>
+          <p>To be ahead of any competitor, this is the best time to build your brand’s profile where everybody is
+            lagging at it. This will leverage the best ever publicity and audience trust on your brand.</p>
+        </div>
+
+        <div class="service">
+          <img src="../img/icons/faishion.jpg" alt="FASHION & LIFESTYLE PROFILE">
+          <h2>Fashion & Lifestyle Profile</h2>
+          <p>Just as design and style is important in fashion it is equally important in web design. Graphic designing
+            creates a high end vibe for your brand resembling you. This will stimulate your consumer’s loyalty and
+            trust.</p>
+        </div>
+
+        <div class="service">
+          <img src="../img/icons/automobile.jpg" alt="AUTOMOBILE PROFILE">
+          <h2>Automobile Profile</h2>
+          <p>We aim to build the best automobile site loading as fast as your vehicles. Caring and maintaining it is our
+            habit. This will truly enhance your business.
+          </p>
+        </div>
+
+        <div class="service">
+          <i class="fas fa-medkit"></i>
+          <h2>Hospitality Profile</h2>
+          <p>You may never know who needs your service in your region. To overcome this we help you to build your
+            business which is known to everyone!</p>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <main>
+    <div class="services">
+      <h1>DIGITAL MARKETING</h1>
+      <div class="cen">
+        <div class="service">
+          <img src="../img/icons/seoo.jpg" alt="SEO">
+          <h2>SEO</h2>
+          <p>SEO is not a cost but an investment to build your customer’s belief on your Brand. Search Engine’s top
+            ranking ensures the top place of your brand in your customer’s heart.</p>
+        </div>
+
+        <div class="service">
+          <img src="../img/icons/sem.jpg" alt="SEM">
+          <h2>SEM</h2>
+          <p>SEM brings you on the top with fewer efforts. It builds your Brand awareness and brings in more qualified
+            leads.</p>
+        </div>
+
+        <div class="service">
+          <img src="../img/icons/socialm.jpg" alt="SMM">
+          <h2>SMM</h2>
+          <p>Social media builds relationships with your audience and brings loyalty to it. It is the best ever addition
+            you can do to your PR strategy.</p>
+        </div>
+
+        <div class="service">
+          <img src="../img/icons/ppc.jpg" alt="PPC">
+          <h2>PPC</h2>
+          <p>PPC cuts down your expenses on marketing and brings instant results. It is the best way to get targeted
+            consumers and produce more revenue.</p>
+        </div>
+
+        <div class="service">
+          <img src="../img/icons/lead generation.jpg" alt="LEAD GENERATION">
+          <h2>LEAD GENERATION
+          </h2>
+          <p>Lead Generation is the best way to know about your products new potential buyers. It generates your brand
+            awareness on a very massive scale and costs less than any other advertisements. </p>
+        </div>
+
+        <div class="service">
+          <img src="../img/icons/dataannalysis.jpg" alt="DATA ANALYSIS">
+          <h2>DATA ANALYSIS</h2>
+          <p>Data Analysis helps you the best to solve problems and bring new innovations in your system. It increases
+            accuracy and precision for targeting new potential customers.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+  <main>
+    <div class="services">
+      <h1>VIDEO EDITING</h1>
+      <div class="cen">
+        <div class="service">
+          <img src="../img/icons/brandlaunch.jpg" alt="Brand LAUNCH">
+          <h2>BRAND LAUNCH</h2>
+          <p>Brand launch is all about introducing your brand or re-branding to the market,
+            and brand launch video is most appropriate manner to reach maximum audience in this
+            digital age. It gives your company the opportunity to explore new markets.
+            Make your presence known to the marketplace and world with a brand launch video.</p>
+        </div>
+
+        <div class="service">
+          <img src="../img/icons/storytelling.jpg" alt="STORYTELLING">
+          <h2>STORYTELLING</h2>
+          <p>Video storytelling works so well because it draws people in, holding their
+            attention spans and making them feel invested in what's happening.
+            Video stories can be educational, as with explainer videos. Other video stories don't
+            have a lot of dialogue but speak volumes visually and with the help of the right music.</p>
+        </div>
+
+        <div class="service">
+          <img src="../img/icons/marketingstatigy.jpg" alt="MARKETING STRATEGY">
+          <h2>MARKETING STRATEGY</h2>
+          <p>Video Marketing. Video marketing is using videos to promote and market your product or service,
+            increase engagement on your digital and social channels, educate your consumers and customers,
+            and reach your audience with a new medium.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+  <main>
+    <div class="services">
+      <h1>BRAND TIE-UPS</h1>
+      <div class="cen">
+        <div class="service">
+          <img src="../img/icons/musical.jpg" alt="MUSICAL CONCERTS">
+          <h2>MUSICAL CONCERTS</h2>
+          <p>We bring the best venues to display your brand to give you an instant growth in audience. Musical concerts
+            are the most reliable one’s for you.
+          </p>
+        </div>
+
+        <div class="service">
+          <img src="../img/icons/awardshow.jpg" alt="AWARD SHOWS">
+          <h2>AWARD SHOWS</h2>
+          <p>Just as you, your brand should be unique and premium. Award Shows give you the best platform to build that
+            upper edge in it</p>
+        </div>
+
+        <div class="service">
+          <img src="../img/icons/comedy.png" alt="STANDUP COMEDY">
+          <h2>STANDUP COMEDY</h2>
+          <p>Standup is the most trustable way to build your brand’s relationship with your consumers. It will make your
+            customers always happy while using your products.
+          </p>
+        </div>
+
+        <div class="service">
+          <img src="../img/icons/sport.jpg" alt="SPORT">
+          <h2>SPORT EVENTS</h2>
+          <p>Got a product related to sports? We will bring the most reach and awareness through these events.</p>
+        </div>
+
+        <div class="service">
+          <img src="../img/icons/MOVIE.svg" alt="MOVIE-TRAILER">
+          <h2>MOVIE-TRAILER LAUNCH</h2>
+          <p>We are eager to bring you in limelight! Branding you in such events is immensely profitable</p>
+        </div>
+
+        <div class="service">
+          <i class="fas fa-archway"></i>
+          <h2>COLLEGE FESTIVALS</h2>
+          <p>This is the best way to create an impact of your brand on young minds. Popularity will flourish through
+            these events.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Services section ends from here -->
+
+
+
+  <!-- footer section starts from here -->
+  <footer>
+    <div class="main-content">
+      <div class="left boxx">
+        <h2>Let's throw in together at Tea break</h2>
+        <div class="content">
+          <p class="p-top">Want to bring prosperity to your Brand?
+            We are here to hold your hands till the peak!
+            Eagerly waiting to know about you on a tea meet!
+          </p>
+        </div>
+      </div>
+      <div class="center boxx">
+        <h2>Address</h2>
+        <div class="content">
+          <div class="place">
+            <span class="fas fa-map-marker-alt"></span>
+            <span class="text txt-white">Boisar, Mumbai, Maharashtra</span>
+          </div>
+          <div class="phone">
+            <span class="fas fa-phone"></span>
+            <span class="text txt-white">+91-8169307733 , +91-7219748227</span>
+          </div>
+          <div class="email">
+            <span class="fas fa-envelope"></span>
+            <span class="text txt-white">support@microstrake.com</span>
+          </div>
+        </div>
+      </div>
+      <div class="right boxx">
+        <h2>Contact Us</h2>
+        <div class="content">
+          <form action="#">
+            <div class="name">
+              <div class="text">Name *</div>
+              <input type="text" required>
+            </div>
+            <div class="Mobile-num">
+              <div class="text">Mobile *</div>
+              <input type="number" required>
+            </div>
+            <div class="email">
+              <div class="text">Email *</div>
+              <input type="email" required>
+            </div>
+            <div class="msg">
+              <div class="text">Message *</div>
+              <textarea rows="2" cols="25" required></textarea>
+            </div>
+            <div class="btn-send">
+              <button type="submit">Send</button>
+            </div>
+            <div class="social">
+              <a href="https://m.facebook.com/MicroStrake" target="_blank"><span class="fab fa-facebook-f"></span></a>
+              <a href="https://twitter.com/microstrake" target="_blank"><span class="fab fa-twitter"></span></a>
+              <a href="https://www.instagram.com/microstrake_" target="_blank"><span
+                  class="fab fa-instagram"></span></a>
+              <a href="https://www.youtube.com/channel/UC_3ICYVyuuwXd7QQAfx6ZJA" target="_blank"><span
+                  class="fab fa-youtube"></span></a>
+              <a href="https://www.linkedin.com/company/microstrake" target="_blank"><span
+                  class="fab fa-linkedin"></span></a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <center>
+        <span class="far fa-copyright"></span><span>2020 MicroStrake All Rights Reserved.</span>
+      </center>
+    </div>
+    </div>
+    <div class="scrolltop float-right">
+      <i class="fa fa-arrow-up" onclick="topFunction()" id="myBtn"></i>
+    </div>
+  </footer>
+  <!-- footer section end from here -->
+
+
+  <!-- java script starts from here -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="./main.js"></script>
+
+  <script>
+    mybutton = document.getElementById("myBtn");
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    // when user click on the buttons
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+  <!-- java script ends from here -->
+
+</body>
+
+</html>
